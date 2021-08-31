@@ -47,6 +47,7 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
     Route::resource('academy','AcademyController');
     Route::get('academy-waiting','AcademyController@waiting')->name('academy.waiting');
     Route::get('academy-approved/{id}','UserController@toggle_approved')->name('academy.approved');
+    Route::post('academy-approved/{id}','UserController@toggle_approved')->name('academy.approved');
     //coaches
     Route::resource('coach','CoachController');
     //players

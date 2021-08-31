@@ -12,7 +12,8 @@
     @endcomponent
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <form id="form" action="" method="GET">
+        <form id="form" action="" method="POST">
+            @csrf
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -26,8 +27,8 @@
                             <input type="hidden" class="form-control" name="reply" value="reject" id="reply">
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button>
+                        <button class="btn btn-primary">تأكيد</button>
                     </div>
                 </div>
             </div>
@@ -78,7 +79,7 @@
                                             <a href="{{route('admin.academy.approved',$row->user->id)}}?reply=approved">
                                                 <button class="btn btn-info waves-effect waves-light"><span>قبول</span> </button>
                                             </a>
-                                            <button class="btn btn-danger waves-effect waves-light" id="reject" data-toggle="modal" data-target="#exampleModal"  data-location="{{route('admin.academy.approved',$row->user->id)}}"><span>رفض</span> </button>
+                                            <button class="btn btn-danger waves-effect waves-light reject"  data-toggle="modal" data-target="#exampleModal"  data-location="{{route('admin.academy.approved',$row->user->id)}}"><span>رفض</span> </button>
 
             {{--                                        @if($row->user->banned==0)--}}
             {{--                                            <a data-id="{{$row->user->id}}" href="#" class="ban">--}}

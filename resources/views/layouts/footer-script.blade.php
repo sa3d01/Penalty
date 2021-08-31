@@ -9,7 +9,7 @@
         <script>
         $(function(){
                 
-            $('#reject').on('click',function(){
+            $('.reject').on('click',function(){
                 $('#form').attr('action',$(this).data('location'))
             });
         });
